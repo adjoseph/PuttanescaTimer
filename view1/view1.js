@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -9,6 +8,22 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', [ '$scope', '$timeout', function($scope,$timeout) {
+	$scope.counter = 5;
+    $scope.onTimeout = function(){
+        $scope.counter--;
+        if ($scope.counter > 0) {
+            mytimeout = $timeout($scope.onTimeout,1000);
+        }
+        else {
+            alert("Time is up!");
+        }
+    }
+    var mytimeout = $timeout($scope.onTimeout,1000);
+    
+    $scope.reset= function(){
+        $scope.counter = 5;
+        mytimeout = $timeout($scope.onTimeout,1000);
+    }
 
 }]);
