@@ -9,7 +9,8 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', [ '$scope', '$timeout', function($scope,$timeout) {
-	$scope.counter = 5;
+	$scope.workTime = 5;
+	$scope.counter = $scope.workTime;
     $scope.onTimeout = function(){
         $scope.counter--;
         if ($scope.counter > 0) {
@@ -22,7 +23,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var mytimeout = $timeout($scope.onTimeout,1000);
     
     $scope.reset= function(){
-        $scope.counter = 5;
+        $scope.counter = $scope.workTime;
         mytimeout = $timeout($scope.onTimeout,1000);
     }
 
