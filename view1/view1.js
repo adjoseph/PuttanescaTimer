@@ -29,7 +29,10 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $scope.pause= function(){
     	$timeout.cancel(mytimeout);
-    	mytimeout = null;
+    }
+
+    $scope.resume= function(){
+    	mytimeout = $timeout($scope.onTimeout,1000);
     }
 
 }]);
