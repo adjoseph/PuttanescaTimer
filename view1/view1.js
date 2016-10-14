@@ -27,4 +27,9 @@ angular.module('myApp.view1', ['ngRoute'])
         mytimeout = $timeout($scope.onTimeout,1000);
     }
 
+    $scope.pause= function(){
+    	$timeout.cancel(mytimeout);
+    	mytimeout = null;
+    }
+
 }]);
