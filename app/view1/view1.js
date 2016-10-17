@@ -27,7 +27,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var mytimeout = $timeout($scope.onTimeout,1000);
     
     $scope.reset= function(){
-        $scope.counter = $scope.workTime;
+        $scope.counter = $scope.workTime * 60;
         mytimeout = $timeout($scope.onTimeout,1000);
     }
 
