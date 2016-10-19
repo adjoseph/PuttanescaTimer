@@ -9,8 +9,14 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', [ '$scope', '$timeout', function($scope,$timeout) {
-	$scope.workTime = 5;
-	$scope.counter = $scope.workTime * 60;
+	$scope.times = [
+		{value : 25, name : "25 (Work Period)"},
+		{value : 5, name : "5 (Short Break Period)"},
+		{value : 10, name :"10 (Long Break Period)"}
+	];
+
+	$scope.workTime = $scope.times[0];
+	$scope.counter = $scope.workTime.value * 60;
 	$scope.remainingMinutes = Math.floor($scope.counter / 60);
 	$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
     $scope.onTimeout = function(){
@@ -27,7 +33,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var mytimeout = $timeout($scope.onTimeout,1000);
     
     $scope.reset= function(){
-        $scope.counter = $scope.workTime * 60;
+        $scope.counter = $scope.workTime.value * 60;
         mytimeout = $timeout($scope.onTimeout,1000);
     }
 
