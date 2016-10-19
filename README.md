@@ -7,7 +7,6 @@ Pomodoro Timer To-Do:
   - coloring
     - show which button currently pressed
   - menu bar
-  - 
 - About page
 - Don't start timer automatically
 - Notification settings
