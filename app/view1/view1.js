@@ -28,6 +28,18 @@ angular.module('myApp.view1', ['ngRoute'])
         }
         else {
             alert("Time is up!");
+            if ($scope.workTime == $scope.times[0]){
+            	$scope.workTime = $scope.times[1];
+            	$scope.counter = $scope.workTime.value * 60;
+            	$scope.remainingMinutes = Math.floor($scope.counter / 60);
+				$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
+            }
+            else{
+            	$scope.workTime = $scope.times[0];
+            	$scope.counter = $scope.workTime.value * 60;
+            	$scope.remainingMinutes = Math.floor($scope.counter / 60);
+				$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
+            }
         }
     }
     var mytimeout;
