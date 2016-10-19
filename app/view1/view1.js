@@ -30,7 +30,7 @@ angular.module('myApp.view1', ['ngRoute'])
             alert("Time is up!");
         }
     }
-    var mytimeout = $timeout($scope.onTimeout,1000);
+    var mytimeout;
     
     $scope.reset= function(){
         $scope.counter = $scope.workTime.value * 60;
