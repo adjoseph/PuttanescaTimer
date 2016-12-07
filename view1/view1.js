@@ -15,6 +15,8 @@ angular.module('myApp.view1', ['ngRoute'])
 		{value : 10, name :"10 (Long Break Period)"}
 	];
 
+	$scope.addingCustom = false;
+
 	$scope.workTime = $scope.times[0];
 	$scope.counter = $scope.workTime.value * 60;
 	$scope.remainingMinutes = Math.floor($scope.counter / 60);
@@ -57,4 +59,25 @@ angular.module('myApp.view1', ['ngRoute'])
     	mytimeout = $timeout($scope.onTimeout,1000);
     }
 
+    $scope.addCustom= function(){
+    	$scope.addingCustom = true;
+    }
+
+    $scope.newCustomName = "";
+    $scope.newCustomTime = 1;
+
+    $scope.submitCustom= function(){
+    	$scope.times.push(
+    		{value : $scope.newCustomTime, 
+    			name : $scope.newCustomTime.toString() + " ("+ $scope.newCustomName + ")"});
+    	$scope.addingCustom = false;
+    }
+
+    $scope.Range = function(start, end) {
+	    var result = [];
+	    for (var i = start; i <= end; i++) {
+	        result.push(i);
+	    }
+	    return result;
+	}
 }]);

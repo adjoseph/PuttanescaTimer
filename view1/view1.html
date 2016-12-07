@@ -6,3 +6,10 @@
 <button ng-click="reset()">Reset</button>  
 <button ng-click="pause()">Pause</button>
 <button ng-click="resume()">Resume</button>
+<button ng-click="addCustom()">Add Custom Time</button>
+
+<div ng-show="addingCustom">
+	Name: <input ng-model="newCustomName"></input>
+	Length in minutes: <select ng-model="newCustomTime" ng-options="time for time in Range(1, 60)"></select>
+	<button ng-click="submitCustom()">Submit</button>
+</div>
