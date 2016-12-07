@@ -1,6 +1,6 @@
 Pomodoro Timer To-Do:
-- Transition between work/break periods
-  - remember previously user-inputted work/break times
+- determine when to take a long break
+- remember previously user-inputted work/break times
 - CSS styling
   - placement of buttons
   - coloring
@@ -15,3 +15,4 @@ Pomodoro Timer To-Do:
 
 Bugs:
 - time initially displays with only one 0 in the minutes place
+- resume button is all kinds of buggy
