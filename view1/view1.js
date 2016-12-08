@@ -15,6 +15,8 @@ angular.module('myApp.view1', ['ngRoute'])
 		{value : 10, name :"10 (Long Break Period)"}
 	];
 
+	$scope.paused = true;
+
 	$scope.addingCustom = false;
 
 	$scope.workTime = $scope.times[0];
@@ -53,10 +55,14 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $scope.pause= function(){
     	$timeout.cancel(mytimeout);
+    	$scope.paused = true;
     }
 
     $scope.resume= function(){
-    	mytimeout = $timeout($scope.onTimeout,1000);
+    	if ($scope.paused == true){
+    		mytimeout = $timeout($scope.onTimeout,1000);
+    		$scope.paused = false;
+    	}
     }
 
     $scope.addCustom= function(){
