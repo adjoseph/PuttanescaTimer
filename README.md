@@ -15,4 +15,3 @@ Pomodoro Timer To-Do:
 
 Bugs:
 - time initially displays with only one 0 in the minutes place
-- resume button is all kinds of buggy
