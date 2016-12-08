@@ -77,6 +77,8 @@ angular.module('myApp.view1', ['ngRoute'])
     		{value : $scope.newCustomTime, 
     			name : $scope.newCustomTime.toString() + " ("+ $scope.newCustomName + ")"});
     	$scope.addingCustom = false;
+    	$scope.newCustomName = "";
+    	$scope.newCustomTime = 1;
     }
 
     $scope.Range = function(start, end) {
