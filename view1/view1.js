@@ -23,6 +23,8 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.counter = $scope.workTime.value * 60;
 	$scope.remainingMinutes = Math.floor($scope.counter / 60);
 	$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
+	if ($scope.remainingSeconds == 0)
+		$scope.remainingSeconds = "00";
     $scope.onTimeout = function(){
         $scope.counter--;
         $scope.remainingMinutes = Math.floor($scope.counter / 60);
