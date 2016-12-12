@@ -1,11 +1,12 @@
 <div>
 	{{remainingMinutes}} : {{remainingSeconds}}
 </div>
-<input ng-model="workTime.value"></input>
-<select ng-model="workTime" ng-options="time.name for time in times"></select>
-<button ng-click="reset()">Reset</button>  
-<button ng-click="pause()">Pause</button>
-<button ng-click="resume()">Resume</button>
+
+<button ng-click="startOrResume()">{{startButton}}</button>
+<div>
+	<select ng-model="workTime" ng-options="time.name for time in times"></select>
+	<button ng-click="reset()">Reset</button>  
+</div>
 <button ng-click="addCustom()">Add Custom Time</button>
 
 <div ng-show="addingCustom">

@@ -17,6 +17,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
 	$scope.paused = true;
 
+	$scope.startButton = "Start";
+
 	$scope.addingCustom = false;
 
 	$scope.workTime = $scope.times[0];
@@ -25,6 +27,7 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
 	if ($scope.remainingSeconds == 0)
 		$scope.remainingSeconds = "00";
+
     $scope.onTimeout = function(){
         $scope.counter--;
         $scope.remainingMinutes = Math.floor($scope.counter / 60);
@@ -50,21 +53,31 @@ angular.module('myApp.view1', ['ngRoute'])
     }
     var mytimeout;
     
-    $scope.reset= function(){
-        $scope.counter = $scope.workTime.value * 60;
-        mytimeout = $timeout($scope.onTimeout,1000);
-    }
-
     $scope.pause= function(){
     	$timeout.cancel(mytimeout);
     	$scope.paused = true;
+    	$scope.startButton = "Start"
     }
 
     $scope.resume= function(){
-    	if ($scope.paused == true){
-    		mytimeout = $timeout($scope.onTimeout,1000);
-    		$scope.paused = false;
+    	mytimeout = $timeout($scope.onTimeout,1000);
+    	$scope.paused = false;
+    	$scope.startButton = "Pause"
+    }
+
+    $scope.startOrResume= function(){
+    	if($scope.paused == true){
+    		$scope.resume()
     	}
+    	else{
+    		$scope.pause();
+    	}
+    }
+
+    $scope.reset= function(){
+        $scope.pause()
+        $scope.counter = $scope.workTime.value * 60;
+        $scope.resume()
     }
 
     $scope.addCustom= function(){
