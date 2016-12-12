@@ -15,3 +15,5 @@ Pomodoro Timer To-Do:
 
 Bugs:
 - time initially displays with only one 0 in the minutes place
+  - Bug fixed, but in a haphazard way: if seconds == 0, it displays as the string "00"
+    - there must be a better way, but it doesn't matter for right now
