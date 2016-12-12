@@ -3,6 +3,7 @@ Pomodoro Timer To-Do:
 - remember previously user-inputted work/break times
 - CSS styling
   - placement of buttons
+  - consistent size of buttons (ie: start/pause button)
   - coloring
     - show which button currently pressed
   - menu bar
