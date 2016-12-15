@@ -36,6 +36,7 @@ angular.module('myApp.view1', ['ngRoute'])
             mytimeout = $timeout($scope.onTimeout,1000);
         }
         else {
+        	$scope.playAudio();
             alert("Time is up!");
             if ($scope.workTime == $scope.times[0]){
             	$scope.workTime = $scope.times[1];
@@ -95,6 +96,11 @@ angular.module('myApp.view1', ['ngRoute'])
     	$scope.newCustomName = "";
     	$scope.newCustomTime = 1;
     }
+
+    $scope.playAudio = function() {
+        var audio = new Audio('../ding.mp3');
+        audio.play();
+    };
 
     $scope.Range = function(start, end) {
 	    var result = [];
