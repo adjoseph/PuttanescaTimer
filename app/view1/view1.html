@@ -2,7 +2,9 @@
 	{{remainingMinutes}} : {{remainingSeconds}}
 </div>
 
-<button ng-click="startOrResume()">{{startButton}}</button>
+<button class="button" ng-class="{true: 'button-paused', false: 'button-unpaused'}[paused]" 
+	ng-click="startOrResume()">{{startButton}}</button>
+	
 <div>
 	<select ng-model="workTime" ng-options="time.name for time in times"></select>
 	<button ng-click="reset()">Reset</button>  
