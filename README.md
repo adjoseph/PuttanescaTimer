@@ -1,6 +1,5 @@
 Pomodoro Timer To-Do:
 - determine when to take a long break
-- remember previously user-inputted work/break times
 - CSS styling
   - placement of buttons
   - coloring
@@ -19,3 +18,4 @@ Bugs:
 - ding only happens after the alert pops up, should happen before
 - persist custom times through reloads and page changes
   - refactor code so that variables are global?
+  - I think globals are generally bad, so maybe this should be tied up in user profile?
