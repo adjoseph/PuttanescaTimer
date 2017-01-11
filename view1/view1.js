@@ -95,6 +95,7 @@ angular.module('myApp.view1', ['ngRoute'])
     	$scope.addingCustom = false;
     	$scope.newCustomName = "";
     	$scope.newCustomTime = 1;
+    	$scope.workTime = $scope.times[$scope.times.length-1];
     }
 
     $scope.playAudio = function() {

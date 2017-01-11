@@ -11,11 +11,11 @@
 </div>
 
 <div id="addCustom">
-<button class="styled-button" ng-click="addCustom()">Add Custom Time</button>
+<button class="styled-button etc-button" ng-click="addCustom()">Add Custom Time</button>
 
 <div ng-show="addingCustom">
 	Name: <input ng-model="newCustomName"></input>
 	Length in minutes: <select ng-model="newCustomTime" ng-options="time for time in Range(1, 60)"></select>
-	<button class="styled-button" ng-click="submitCustom()">Submit</button>
+	<button class="styled-button etc-button" ng-click="submitCustom()">Submit</button>
 </div>
 </div>

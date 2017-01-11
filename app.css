@@ -5,6 +5,7 @@
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 0 0 0.5em;
+  background-color: #79949B;
 }
 
 .menu:before {
@@ -47,15 +48,19 @@
 }
 
 .button-paused{
-	background-color: #4CAF50; /* Green */
+	background-color: #0B3C49; /* Green */
 }
 
 .button-unpaused{
-	background-color: #f44336; /* Red */ 
+	background-color: #731963; /* Red */ 
 }
 
 .reset-button{
-	background-color: #f44336; /* Red */ 
+	background-color: #731963; /* Red */ 
+}
+
+.etc-button{
+	background-color: #CBD2D0; /* Grey */
 }
 
 .timesList{
@@ -77,3 +82,4 @@
     border-radius: 2;
     height: 34px;
 }
+
