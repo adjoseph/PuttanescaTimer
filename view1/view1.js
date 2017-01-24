@@ -43,12 +43,16 @@ angular.module('myApp.view1', ['ngRoute'])
             	$scope.counter = $scope.workTime.value * 60;
             	$scope.remainingMinutes = Math.floor($scope.counter / 60);
 				$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
+				if ($scope.remainingSeconds == 0)
+					$scope.remainingSeconds = "00";
             }
             else{
             	$scope.workTime = $scope.times[0];
             	$scope.counter = $scope.workTime.value * 60;
             	$scope.remainingMinutes = Math.floor($scope.counter / 60);
 				$scope.remainingSeconds = $scope.counter - $scope.remainingMinutes * 60;
+				if ($scope.remainingSeconds == 0)
+					$scope.remainingSeconds = "00";
             }
         }
     }
@@ -98,8 +102,11 @@ angular.module('myApp.view1', ['ngRoute'])
     	$scope.workTime = $scope.times[$scope.times.length-1];
     }
 
+    $scope.audioVolume = 1;
+
     $scope.playAudio = function() {
         var audio = new Audio('../ding.mp3');
+        audio.volume = $scope.audioVolume;
         audio.play();
     };
 
