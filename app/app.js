@@ -29,7 +29,18 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 	        .parent(angular.element(document.querySelector('#popupContainer')))
 	        .clickOutsideToClose(true)
 	        .title('About')
-	        .htmlContent('The Pomodoro Technique is a time management method.' + '<br>' +  'The goal of the technique is to facilitate iterative development by breaking work into intervals')
+	        .htmlContent('The Pomodoro Technique is a time management method.' + '<br>' +
+	          'The goal of the technique is to facilitate iterative development by breaking work into intervals:' + '<br>' +
+	          '    - Set timer to 25 minutes, and Work on task until time is up' + '<br>' +
+	          '    - Set timer to 5 minutes, and take a Short Break' + '<br>' +
+	          '    - Repeat' + '<br>' +
+	          '    - Every four cycles set timer to 10 minutes, and take a Long Break in place of the Short Break' + '<br>' +
+	          '<br>' + 
+	          'PuttanescaTimer automatically switches between these three Periods' + '<br>' +
+	          'You can add in your own custom time Periods to suit your personal work habits' + '<br>'+
+	          '<br>' + 
+	          'Why "PuttanescaTimer"?' + '<br>'+
+	          'Simple, puttanesca is the funniest of all pastas')
 	        .ariaLabel('Alert Dialog Demo')
 	        .ok('Got it!')
 	        .targetEvent(ev)
