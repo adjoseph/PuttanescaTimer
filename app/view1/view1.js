@@ -8,7 +8,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [ '$scope', '$timeout', function($scope,$timeout) {
+.controller('View1Ctrl', [ '$scope', '$timeout', 'settingsService', function($scope,$timeout, settingsService) {
 	$scope.times = [
 		{value : 25, name : "25 (Work Period)"},
 		{value : 5, name : "5 (Short Break Period)"},
@@ -102,11 +102,14 @@ angular.module('myApp.view1', ['ngRoute'])
     	$scope.workTime = $scope.times[$scope.times.length-1];
     }
 
-    $scope.audioVolume = 1;
+    $scope.getAudioVolume = function(){
+    	return settingsService.getAudioVolume();
+    }
+    $scope.volume = $scope.getAudioVolume();
 
     $scope.playAudio = function() {
         var audio = new Audio('../ding.mp3');
-        audio.volume = $scope.audioVolume;
+        audio.volume = $scope.getAudioVolume();
         audio.play();
     };
 
