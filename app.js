@@ -45,15 +45,51 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 	  }
 
 	  $scope.showSettings = function(ev) {
-	    $mdDialog.show(
-	      $mdDialog.alert()
-	        .parent(angular.element(document.querySelector('#popupContainer')))
-	        .clickOutsideToClose(true)
-	        .title('Settings')
-	        .htmlContent()
-	        .ariaLabel('Alert Dialog Demo')
-	        .ok('Submit')
-	        .targetEvent(ev)
-	    )
+	    $mdDialog.show({
+	      controller: DialogController,
+	      templateUrl: 'settingsDialog.html',
+	      parent: angular.element(document.body),
+	      targetEvent: ev,
+	      clickOutsideToClose:true,
+	      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+	    })
 	  }
+
+	  function DialogController($scope, $mdDialog, settingsService) {
+	    $scope.hide = function() {
+	      	$mdDialog.hide();
+	    };
+
+	    $scope.cancel = function() {
+	      	$mdDialog.cancel();
+	    };
+
+	    $scope.confirm = function() {
+	    	$scope.setAudioVolume()
+	      	$mdDialog.hide();
+	    };
+
+	    $scope.getAudioVolume = function(){
+	    	return settingsService.getAudioVolume();
+	    }
+	    
+	    $scope.volumes  = [
+	    	{name:'100%', value: 1},
+	    	{name: '75%', value: .75}, 
+	    	{name: '50%', value: .50},
+	    	{name: '25%', value: .25},
+	    	{name: 'Mute', value: 0}
+	    ];
+	    $scope.audioVolume = $scope.getAudioVolume();
+	    $scope.volume = $scope.volumes[0];
+	    for(var i = 0; i < $scope.volumes.length; i++){
+	    	if($scope.volumes[i].value == $scope.audioVolume)
+	    		$scope.volume = $scope.volumes[i]
+	    }
+
+	    $scope.setAudioVolume = function(){
+	    	return settingsService.setAudioVolume($scope.volume.value);
+	    }
+	   	
+  }
 })
