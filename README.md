@@ -4,10 +4,6 @@ Pomodoro Timer To-Do:
   - placement of buttons
   - coloring
   - menu bar
-- About page
-- Notification settings
-  - alternate sounds
-  - volume control
 
 
 Bugs:

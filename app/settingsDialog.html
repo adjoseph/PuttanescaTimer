@@ -2,6 +2,9 @@
   <form ng-cloak>
     
     <md-dialog-content>
+      Select Sound
+      <select ng-model='sound' ng-options='sound.name for sound in sounds'></select>
+
       Select Volume
       <select ng-model='volume' ng-options='volume.name for volume in volumes'></select>
     </md-dialog-content>

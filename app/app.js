@@ -66,6 +66,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
 	    $scope.confirm = function() {
 	    	$scope.setAudioVolume()
+	    	$scope.setSoundFile();
 	      	$mdDialog.hide();
 	    };
 
@@ -74,22 +75,42 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 	    }
 	    
 	    $scope.volumes  = [
-	    	{name:'100%', value: 1},
+	    	{name: '100%', value: 1},
 	    	{name: '75%', value: .75}, 
 	    	{name: '50%', value: .50},
 	    	{name: '25%', value: .25},
 	    	{name: 'Mute', value: 0}
 	    ];
 	    $scope.audioVolume = $scope.getAudioVolume();
-	    $scope.volume = $scope.volumes[0];
+	    $scope.volume = $scope.volumes[0]; //set to a default
 	    for(var i = 0; i < $scope.volumes.length; i++){
 	    	if($scope.volumes[i].value == $scope.audioVolume)
-	    		$scope.volume = $scope.volumes[i]
+	    		$scope.volume = $scope.volumes[i] //switch to value in settingsService
 	    }
 
 	    $scope.setAudioVolume = function(){
 	    	return settingsService.setAudioVolume($scope.volume.value);
 	    }
-	   	
+
+	    $scope.getSoundFile = function(){
+	    	return settingsService.getSoundFile();
+	    }
+	    $scope.sounds = [
+	    	{name: 'ding', path: '../sounds/ding.mp3'},
+	    	{name: 'alarm', path: '../sounds/alarm.mp3'},
+	    	{name: 'beeper', path: '../sounds/beeper.mp3'},
+	    	{name: 'ambient bells', path: '../sounds/ambientBells.mp3'}
+	    ];
+	    $scope.soundFile = $scope.getSoundFile();
+	   	$scope.sound = $scope.sounds[0]; //set to a default
+	   	for(var i = 0; i < $scope.sounds.length; i++){
+	    	if($scope.sounds[i].path == $scope.soundFile)
+	    		$scope.sound = $scope.sounds[i] //switch to value in settingsService
+	    }
+	    $scope.setSoundFile = function(){
+	    	return settingsService.setSoundFile($scope.sound.path)
+	    }
+
+
   }
 })

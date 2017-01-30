@@ -105,10 +105,13 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.getAudioVolume = function(){
     	return settingsService.getAudioVolume();
     }
-    $scope.volume = $scope.getAudioVolume();
+
+    $scope.getSoundFile = function(){
+        return settingsService.getSoundFile();
+    }
 
     $scope.playAudio = function() {
-        var audio = new Audio('../ding.mp3');
+        var audio = new Audio($scope.getSoundFile());
         audio.volume = $scope.getAudioVolume();
         audio.play();
     };
