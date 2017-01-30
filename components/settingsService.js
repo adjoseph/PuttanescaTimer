@@ -3,10 +3,13 @@ angular.module('myApp')
 
 	function settingsService(){
 		var audioVolume = 1;
+		var soundFile = '../sounds/ding.mp3';
 
 		var service = {
 			getAudioVolume: getAudioVolume,
-			setAudioVolume: setAudioVolume
+			setAudioVolume: setAudioVolume,
+			getSoundFile: getSoundFile,
+			setSoundFile: setSoundFile
 		}
 
 		return service;
@@ -17,5 +20,13 @@ angular.module('myApp')
 
 		function setAudioVolume(volume){
 			audioVolume = volume;
+		}
+
+		function getSoundFile(){
+			return soundFile;
+		}
+
+		function setSoundFile(file){
+			soundFile = file;
 		}
 	}
