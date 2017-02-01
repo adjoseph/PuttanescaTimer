@@ -4,25 +4,22 @@
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
-  padding: 0 0 0.5em;
+  padding: 0.5em;
   background-color: #79949B;
+  margin-top: 0;
 }
 
-.menu:before {
-  content: "[";
+ul{
+  list-style: none;
+  float: right;
 }
 
-.menu:after {
-  content: "]";
+li{
+  float: left;
 }
 
-.menu > li {
+#title{
   display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
 }
 
 #timer_countdown {

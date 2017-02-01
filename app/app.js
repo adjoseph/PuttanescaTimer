@@ -100,7 +100,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 	    	{name: 'alarm', path: '../sounds/alarm.mp3'},
 	    	{name: 'beeper', path: '../sounds/beeper.mp3'},
 	    	{name: 'ambient bells', path: '../sounds/ambientBells.mp3'}
-	    ];
+	    ]; //path is relative to view1, where it will be used
 	    $scope.soundFile = $scope.getSoundFile();
 	   	$scope.sound = $scope.sounds[0]; //set to a default
 	   	for(var i = 0; i < $scope.sounds.length; i++){
