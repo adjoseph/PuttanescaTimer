@@ -16,12 +16,13 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body id="popupContainer">
-  <ul class="menu" ng-controller="AppCtrl">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-    <li><button ng-click="showAbout($event)">About</button></li>
-    <li><button ng-click="showSettings($event)">Settings</button></li>
-  </ul>
+  <div class="menu">
+    <h1 id="title">PuttanescaTimer</h1>
+    <ul ng-controller="AppCtrl">
+      <li><button ng-click="showAbout($event)">About</button></li>
+      <li><button ng-click="showSettings($event)">Settings</button></li> 
+    </ul>
+  </div>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
