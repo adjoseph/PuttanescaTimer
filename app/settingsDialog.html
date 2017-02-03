@@ -2,11 +2,15 @@
   <form ng-cloak>
     
     <md-dialog-content>
+    <div>
       Select Sound
-      <select ng-model='sound' ng-options='sound.name for sound in sounds'></select>
+      <select class="styled-select" ng-model='sound' ng-options='sound.name for sound in sounds'></select>
+      </div>
 
+      <div>
       Select Volume
-      <select ng-model='volume' ng-options='volume.name for volume in volumes'></select>
+      <select class="styled-select" ng-model='volume' ng-options='volume.name for volume in volumes'></select>
+      </div>
     </md-dialog-content>
 
     <md-dialog-actions layout="row">

@@ -20,7 +20,8 @@ li{
 
 #title{
   display: inline;
-  font-size: 3em;
+  font-size: 250%;
+  color: white;
 }
 
 #timer_countdown {
@@ -80,7 +81,6 @@ li{
 
 .styled-select{
 	background: white;
-	width: 268px;
     padding: 5px;
     font-size: 16px;
     line-height: 1;
@@ -91,4 +91,26 @@ li{
 
 body{
   background-color: #F0F2F2; /* Light Grey */ 
+}
+
+@media only screen and (max-width: 430px){
+  /* for mobile */
+  ul{
+    float: none;
+  }
+}
+
+@media only screen and (max-width: 325px){
+  /* for smaller mobile */
+  ul{
+    float: none;
+  }
+
+  #title{
+    font-size: 32px;
+  }
+
+  #aboutButton{
+    display: none;
+  }
 }
