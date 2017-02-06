@@ -8,7 +8,7 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [ '$scope', '$timeout', 'settingsService', function($scope,$timeout, settingsService) {
+.controller('View1Ctrl', [ '$scope', '$timeout', 'settingsService', '$mdDialog', 'addCustomService', function($scope, $timeout, settingsService, $mdDialog, addCustomService) {
 	$scope.times = [
 		{value : 25, name : "25 (Work Period)"},
 		{value : 5, name : "5 (Short Break Period)"},
@@ -18,8 +18,6 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.paused = true;
 
 	$scope.startButton = "Start";
-
-	$scope.addingCustom = false;
 
 	$scope.workTime = $scope.times[0];
 	$scope.counter = $scope.workTime.value * 60;
@@ -85,20 +83,78 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.resume()
     }
 
-    $scope.addCustom= function(){
-    	$scope.addingCustom = true;
+    $scope.addCustom= function(ev){
+        $mdDialog.show({
+          controller: DialogController,
+          templateUrl: 'addCustomDialog.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose:true,
+          fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        })
+        .then(function(){
+            $scope.submitCustom();
+        });
+    }
+
+    function DialogController($scope, $mdDialog, settingsService) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
+
+        $scope.confirm = function() {
+            $scope.setNewCustomName()
+            $scope.setNewCustomTime();
+            $mdDialog.hide();
+        };
+
+        $scope.getNewCustomName = function(){
+            return addCustomService.getNewCustomName();
+        }
+
+        $scope.getNewCustomTime = function(){
+            return addCustomService.getNewCustomTime();
+        }
+
+        $scope.setNewCustomName = function(){
+            return addCustomService.setNewCustomName($scope.newCustomName);
+        }
+
+        $scope.setNewCustomTime = function(){
+            return addCustomService.setNewCustomTime($scope.newCustomTime);
+        }
+
+        $scope.Range = function(start, end) {
+            var result = [];
+            for (var i = start; i <= end; i++) {
+                result.push(i);
+            }
+            return result;
+        }
+
+        $scope.newCustomName = $scope.getNewCustomName();
+        $scope.newCustomTime = $scope.getNewCustomTime();
+
+
     }
 
     $scope.newCustomName = "";
     $scope.newCustomTime = 1;
 
     $scope.submitCustom= function(){
+        $scope.newCustomName = addCustomService.getNewCustomName();
+        $scope.newCustomTime = addCustomService.getNewCustomTime();
     	$scope.times.push(
     		{value : $scope.newCustomTime, 
-    			name : $scope.newCustomTime.toString() + " ("+ $scope.newCustomName + ")"});
-    	$scope.addingCustom = false;
+    			name : $scope.newCustomTime.toString() + " ("+ $scope.newCustomName + ")"})
     	$scope.newCustomName = "";
     	$scope.newCustomTime = 1;
+        addCustomService.setNewCustomTime($scope.newCustomTime);
+        addCustomService.setNewCustomName($scope.newCustomName);
     	$scope.workTime = $scope.times[$scope.times.length-1];
     }
 
@@ -115,12 +171,4 @@ angular.module('myApp.view1', ['ngRoute'])
         audio.volume = $scope.getAudioVolume();
         audio.play();
     };
-
-    $scope.Range = function(start, end) {
-	    var result = [];
-	    for (var i = start; i <= end; i++) {
-	        result.push(i);
-	    }
-	    return result;
-	}
 }]);
