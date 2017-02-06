@@ -35,7 +35,6 @@ angular.module('myApp.view1', ['ngRoute'])
         }
         else {
         	$scope.playAudio();
-            alert("Time is up!");
             if ($scope.workTime == $scope.times[0]){
             	$scope.workTime = $scope.times[1];
             	$scope.counter = $scope.workTime.value * 60;
@@ -97,6 +96,7 @@ angular.module('myApp.view1', ['ngRoute'])
         });
     }
 
+    //controller for add custom time dialog
     function DialogController($scope, $mdDialog, settingsService) {
         $scope.hide = function() {
             $mdDialog.hide();
@@ -128,6 +128,7 @@ angular.module('myApp.view1', ['ngRoute'])
             return addCustomService.setNewCustomTime($scope.newCustomTime);
         }
 
+        //Range function for the time selector from 1-60minutes
         $scope.Range = function(start, end) {
             var result = [];
             for (var i = start; i <= end; i++) {
@@ -142,8 +143,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
     }
 
-    $scope.newCustomName = "";
-    $scope.newCustomTime = 1;
+    $scope.newCustomName = ""; //set to default for safety 
+    $scope.newCustomTime = 1; 
 
     $scope.submitCustom= function(){
         $scope.newCustomName = addCustomService.getNewCustomName();
@@ -151,11 +152,11 @@ angular.module('myApp.view1', ['ngRoute'])
     	$scope.times.push(
     		{value : $scope.newCustomTime, 
     			name : $scope.newCustomTime.toString() + " ("+ $scope.newCustomName + ")"})
-    	$scope.newCustomName = "";
+    	$scope.newCustomName = ""; //return to default
     	$scope.newCustomTime = 1;
-        addCustomService.setNewCustomTime($scope.newCustomTime);
+        addCustomService.setNewCustomTime($scope.newCustomTime); //reset to defaults in service
         addCustomService.setNewCustomName($scope.newCustomName);
-    	$scope.workTime = $scope.times[$scope.times.length-1];
+    	$scope.workTime = $scope.times[$scope.times.length-1]; //set selected time to newly added custom time
     }
 
     $scope.getAudioVolume = function(){

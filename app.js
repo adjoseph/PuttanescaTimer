@@ -33,7 +33,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 	          '    - Repeat' + '<br>' +
 	          '    - Every four cycles set timer to 10 minutes, and take a Long Break in place of the Short Break' + '<br>' +
 	          '<br>' + 
-	          'PuttanescaTimer automatically switches between these three Periods' + '<br>' +
 	          'You can add in your own custom time Periods to suit your personal work habits' + '<br>'+
 	          '<br>' + 
 	          'Why "PuttanescaTimer"?' + '<br>'+

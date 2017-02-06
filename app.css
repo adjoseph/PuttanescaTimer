@@ -47,11 +47,11 @@ li{
 }
 
 .button-paused{
-	background-color: #0B3C49; /* Green */
+  background-color: #731963; /* Red */ 
 }
 
 .button-unpaused{
-	background-color: #731963; /* Red */ 
+	background-color: #0B3C49; /* Green */
 }
 
 .reset-button{
@@ -72,7 +72,14 @@ li{
 
 .timesList{
 	text-align: center;
+  margin: auto;
+  padding-top: 5px;
+  width: 50%;
 	margin-top: 40px;
+  border-style: solid;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
 }
 
 #addCustom{
@@ -81,12 +88,15 @@ li{
 
 .styled-select{
 	background: white;
-    padding: 5px;
+    padding-top: 5px;
     font-size: 16px;
     line-height: 1;
     border: 2;
     border-radius: 2;
-    height: 34px;
+}
+
+.times-select{
+  height: 60px;
 }
 
 body{

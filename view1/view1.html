@@ -2,15 +2,15 @@
 	{{remainingMinutes}} : {{remainingSeconds}}
 </h1>
 
-<button class="startButton styled-button" ng-class="{true: 'button-paused', false: 'button-unpaused'}[paused]" 
+<button class="startButton styled-button md-whiteframe-4dp" ng-class="{true: 'button-paused', false: 'button-unpaused'}[paused]" 
 	ng-click="startOrResume()">{{startButton}}</button>
 	
 <div class="timesList">
-	<select class="styled-select" ng-model="workTime" ng-options="time.name for time in times"></select>
+	<select size="3" class="styled-select times-select" ng-model="workTime" ng-options="time.name for time in times"></select>
 	<button class="styled-button reset-button" ng-click="reset()">Reset</button>  
 </div>
 
 <div id="addCustom">
-<button class="styled-button etc-button" ng-click="addCustom($event)">Add Custom Time</button>
+<button class="styled-button etc-button md-whiteframe-2dp" ng-click="addCustom($event)">Add Custom Time</button>
 
 </div>
