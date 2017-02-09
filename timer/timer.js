@@ -1,14 +1,14 @@
 'use strict';
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.timer', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+  $routeProvider.when('/timer', {
+    templateUrl: 'timer/timer.html',
+    controller: 'timerCtrl'
   });
 }])
 
-.controller('View1Ctrl', [ '$scope', '$timeout', 'settingsService', '$mdDialog', 'addCustomService', function($scope, $timeout, settingsService, $mdDialog, addCustomService) {
+.controller('timerCtrl', [ '$scope', '$timeout', 'settingsService', '$mdDialog', 'addCustomService', function($scope, $timeout, settingsService, $mdDialog, addCustomService) {
 	$scope.times = [
 		{value : 25, name : "25 (Work Period)"},
 		{value : 5, name : "5 (Short Break Period)"},
