@@ -76,8 +76,9 @@ angular.module('myApp.view1', ['ngRoute'])
     	}
     }
 
-    $scope.reset= function(){
+    $scope.reset= function(time){
         $scope.pause()
+        $scope.workTime=time;
         $scope.counter = $scope.workTime.value * 60;
         $scope.resume()
     }

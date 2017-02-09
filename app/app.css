@@ -99,6 +99,11 @@ li{
   height: 80px;
 }
 
+.timesList-button{
+  margin: .1em;
+  background-color: #425155; /* Dark Greenish Grey */
+}
+
 body{
   background-color: #F0F2F2; /* Light Grey */ 
 }
