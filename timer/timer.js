@@ -9,7 +9,8 @@ angular.module('myApp.timer', ['ngRoute'])
 }])
 
 .controller('timerCtrl', [ '$scope', '$timeout', 'settingsService', '$mdDialog', 'addCustomService', function($scope, $timeout, settingsService, $mdDialog, addCustomService) {
-	$scope.times = [
+	$scope.fade = true;
+    $scope.times = [
 		{value : 25, name : "25 (Work Period)"},
 		{value : 5, name : "5 (Short Break Period)"},
 		{value : 10, name :"10 (Long Break Period)"}

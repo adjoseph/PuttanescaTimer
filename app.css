@@ -40,6 +40,10 @@ li{
     margin:0 auto;
 }
 
+.styled-button:hover{
+  border:solid black;
+}
+
 .startButton {
     display: block;
     width: 100px;
@@ -88,11 +92,8 @@ li{
 
 .styled-select{
 	background: white;
-    padding-top: 5px;
-    font-size: 16px;
-    line-height: 1;
-    border: 2;
-    border-radius: 2;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .times-select{
@@ -104,8 +105,29 @@ li{
   background-color: #425155; /* Dark Greenish Grey */
 }
 
+input{
+  margin: 5px;
+}
+
 body{
   background-color: #F0F2F2; /* Light Grey */ 
+}
+
+.fade-in {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+}
+.fade-in.ng-enter {
+  opacity: 0;
+}
+.fade-in.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.fade-in.ng-leave {
+  opacity: 1;
+}
+.fade-in.ng-leave.ng-leave-active {
+  opacity: 0;
 }
 
 @media only screen and (max-width: 430px){
