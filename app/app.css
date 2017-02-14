@@ -32,17 +32,19 @@ li{
 }
 
 .styled-button{
-	border: none;
     color: white;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     margin:0 auto;
+    transition: all .5s ease-out;
 }
 
 .styled-button:hover{
-  border:solid black;
+  border:solid black 2px;
 }
+
+.styled-button:focus {outline:0;}
 
 .startButton {
     display: block;
@@ -70,14 +72,14 @@ li{
   background-color: #425155; /* Dark Greenish Grey */
   padding: 10px 40px;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #B9BFBE; /* Grey */
 }
 
 .timesList{
 	text-align: center;
   margin: auto;
-  padding-top: 5px;
+  padding: 5px;
   width: 50%;
 	margin-top: 40px;
   border-style: solid;
@@ -101,7 +103,7 @@ li{
 }
 
 .timesList-button{
-  margin: .1em;
+  margin: 3px;
   background-color: #425155; /* Dark Greenish Grey */
 }
 
