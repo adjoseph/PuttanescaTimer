@@ -6,7 +6,7 @@
 	ng-click="startOrResume()">{{startButton}}</button>
 	
 <div class="timesList">
-	<button class="styled-button timesList-button" ng-repeat="time in times" ng-click="reset(time)">{{time.name}}</button>
+	<button class="styled-button timesList-button" ng-repeat="time in times" ng-click="reset(time)"><span>{{time.name}}</span></button>
 </div>
 
 <div id="addCustom">
