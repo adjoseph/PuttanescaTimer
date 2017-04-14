@@ -1,15 +1,20 @@
-<h1 id="timer_countdown">
-	{{remainingMinutes}} : {{remainingSeconds}}
-</h1>
+<div class ="card md-whiteframe-2dp">
+	<h1 id="timer_countdown">
+		{{remainingMinutes}} : {{remainingSeconds}}
+	</h1>
 
-<button class="startButton styled-button md-whiteframe-4dp" ng-class="{true: 'button-paused', false: 'button-unpaused'}[paused]" 
-	ng-click="startOrResume()">{{startButton}}</button>
-	
-<div class="timesList">
-	<button class="styled-button timesList-button" ng-repeat="time in times" ng-click="reset(time)"><span>{{time.name}}</span></button>
+	<button class="startButton styled-button md-whiteframe-4dp" ng-class="{true: 'button-paused', false: 'button-unpaused'}[paused]" 
+		ng-click="startOrResume()">{{startButton}}</button>
 </div>
 
-<div id="addCustom">
-<button class="styled-button etc-button md-whiteframe-2dp" ng-click="addCustom($event)">Add Custom Time</button>
+<div class ="card md-whiteframe-2dp">
+	
+	<div class="timesList">
+		<button class="styled-button timesList-button" ng-repeat="time in times" ng-click="reset(time)"><span>{{time.name}}</span></button>
+	</div>
 
+	<div id="addCustom">
+	<button class="styled-button etc-button md-whiteframe-2dp" ng-click="addCustom($event)">Add Custom Time</button>
+
+	</div>
 </div>
