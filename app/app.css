@@ -1,11 +1,16 @@
 /* app css stylesheet */
 
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   padding: 2em;
-  background-color: #79949B;
+  /*background-color: #79949B;*/
+  background-color: #00796b;
   margin-top: 0;
 }
 
@@ -25,7 +30,8 @@ md-dialog-content{
 #title{
   display: inline;
   font-size: 250%;
-  color: white;
+  color: #ffffff;
+  font-family: 'Merriweather', serif;
 }
 
 #timer_countdown {
@@ -63,7 +69,8 @@ md-dialog-content{
 }
 
 .button-paused{
-  background-color: #731963; /* Red */ 
+  /*background-color: #731963;  Red */ 
+  background-color: #880e4f
 }
 
 .button-unpaused{
@@ -79,7 +86,8 @@ md-dialog-content{
 }
 
 .menu-button{
-  background-color: #425155; /* Dark Greenish Grey */
+  /*background-color: #425155;  Dark Greenish Grey */
+  background-color: #004d40;
   padding: 10px 40px;
   border-style: solid;
   border-width: 2px;
@@ -92,7 +100,7 @@ md-dialog-content{
   padding: 5px;
   width: 50%;
 	margin-top: 40px;
-}
+  }
 
 #addCustom{
 	text-align: center;
@@ -110,7 +118,9 @@ md-dialog-content{
 
 .timesList-button{
   margin: 3px;
-  background-color: #425155; /* Dark Greenish Grey */
+  /*background-color: #425155;  Dark Greenish Grey */
+  background-color: #004d40;
+
 }
 
 input{
