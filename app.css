@@ -2,6 +2,8 @@
 
 body{
   font-family: 'Roboto', sans-serif;
+  /* background-color: #F0F2F2;  Light Grey */ 
+  background-color: #004d40;
 }
 
 .menu {
@@ -30,7 +32,7 @@ md-dialog-content{
 #title{
   display: inline;
   font-size: 250%;
-  color: #ffffff;
+  color: #F0F2F2;
   font-family: 'Merriweather', serif;
 }
 
@@ -39,28 +41,29 @@ md-dialog-content{
 	margin-bottom: 2px;
 	margin-top: 2px;
 	text-align: center;
+  color: #F0F2F2;
 }
 
 .card{
   padding-bottom: 20px;
   margin: 50px;
-  background-color: white;
 }
 
 .styled-button{
-    color: white;
+    color: #F0F2F2;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     margin:0 auto;
     transition: all .5s ease-out;
+    border: none;
+    padding: 10px;
 }
 
-.styled-button:hover{
-  border:solid black 2px;
-}
 
-.styled-button:focus {outline:0;}
+.styled-button:focus {
+  outline:0;
+}
 
 .startButton {
     display: block;
@@ -119,7 +122,7 @@ md-dialog-content{
 .timesList-button{
   margin: 3px;
   /*background-color: #425155;  Dark Greenish Grey */
-  background-color: #004d40;
+  background-color: #0B3C49
 
 }
 
@@ -127,9 +130,6 @@ input{
   margin: 5px;
 }
 
-body{
-  background-color: #F0F2F2; /* Light Grey */ 
-}
 
 .fade-in {
   -webkit-transition: 1s linear all;
