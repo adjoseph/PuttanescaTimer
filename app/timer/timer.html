@@ -1,4 +1,4 @@
-<div class ="card md-whiteframe-2dp">
+<div class ="card">
 	<h1 id="timer_countdown">
 		{{remainingMinutes}} : {{remainingSeconds}}
 	</h1>
@@ -7,7 +7,7 @@
 		ng-click="startOrResume()">{{startButton}}</button>
 </div>
 
-<div class ="card md-whiteframe-2dp">
+<div class ="card">
 	
 	<div class="timesList">
 		<button class="styled-button timesList-button" ng-repeat="time in times" ng-click="reset(time)"><span>{{time.name}}</span></button>
